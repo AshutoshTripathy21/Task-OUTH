@@ -1,0 +1,33 @@
+{% extends 'tasks/base.html' %}
+
+{% block title %}
+    {% if form.instance.pk %}
+        Edit Task
+    {% else %}
+        Create Task
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+<h1>
+    {% if form.instance.pk %}
+        Edit Task
+    {% else %}
+        Create Task
+    {% endif %}
+</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">
+        {% if form.instance.pk %}
+            Save Changes
+        {% else %}
+            Create Task
+        {% endif %}
+    </button>
+</form>
+
+<a href="/">Cancel</a>
+{% endblock %}

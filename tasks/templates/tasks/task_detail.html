@@ -1,0 +1,16 @@
+{% extends 'tasks/base.html' %}
+
+{% block title %}Task Details{% endblock %}
+
+{% block content %}
+<div class="task-details">
+    <h1>{{ task.title }}</h1>
+    <p>{{ task.description }}</p>
+    <div class="task-actions">
+        <a href="{% url 'task_detail' pk=task.pk %}" class="styled-link">View Details</a>
+        <a href="{% url 'task_update' pk=task.pk %}" class="styled-link">Edit</a>
+        <a href="{% url 'task_delete' pk=task.pk %}" class="styled-link danger">Delete</a>
+    </div>
+</div>
+{% endblock %}
+

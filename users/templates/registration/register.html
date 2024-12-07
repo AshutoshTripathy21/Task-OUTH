@@ -1,0 +1,7 @@
+<h2>Complete your registration</h2>
+<form method="POST">
+    {% csrf_token %}
+    <label for="password">Enter Password:</label>
+    <input type="password" name="password" required>
+    <button type="submit">Submit</button>
+</form>

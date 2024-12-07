@@ -1,0 +1,281 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+    display: flex;            
+    flex-direction: column;   
+    height: 100vh; 
+}
+
+main {
+    flex: 1;  
+}
+
+header {
+    background-color: #083e42;
+    padding: 20px 0;
+}
+
+header nav {
+    background-color: #083e42; 
+    color: white;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 8px 16px; 
+    gap: 20px; 
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 16px;
+    position: relative;
+}
+
+header nav a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+header nav a:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    left: 0;
+    bottom: -5px;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+header nav a:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+ul li {
+    background-color: #fff;
+    margin: 15px 0;
+    padding: 15px 20px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+ul li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+ul li a {
+    text-decoration: none;
+    color: #083e42;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+ul li a:hover {
+    color: #083e42;
+}
+
+/* Task Forms */
+form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+form h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form button {
+    background-color: #083e42;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #083e42;
+}
+
+form a {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #083e42;
+    text-decoration: none;
+}
+
+form a:hover {
+    text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Apply animation to page elements */
+main {
+    animation: fadeIn 1s ease-out;
+}
+
+h1, p {
+    animation: slideUp 1s ease-out;
+}
+
+/* Buttons */
+button {
+    background-color: #083e42;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #083e42;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    form {
+        padding: 20px;
+    }
+
+    ul {
+        padding: 10px;
+    }
+
+    ul li {
+        padding: 10px;
+    }
+}
+
+footer {
+    background-color: #0c838c;
+    color: white;
+    text-align: center;
+    position: relative;
+    /* margin-top: 100px; */
+    bottom: 0;
+    width: 100%;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* General link styles */
+.styled-link {
+    text-decoration: none;
+    font-weight: bold;
+    color: #007BFF; /* Blue color for links */
+    padding: 8px 12px;
+    border-radius: 4px;
+    background-color: #f0f8ff; /* Light background */
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.styled-link:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* Danger link styles (like delete) */
+.styled-link.danger {
+    background-color: #f8d7da; /* Light red background */
+    color: #721c24; /* Dark red text */
+}
+
+.styled-link.danger:hover {
+    background-color: #dc3545; /* Bright red on hover */
+    color: white;
+}
+
+/* Task details styles */
+.task-details {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.task-details h1 {
+    margin: 0 0 10px;
+    font-size: 24px;
+    color: #333;
+}
+
+.task-details p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.task-actions {
+    display: flex;
+    gap: 10px;
+}

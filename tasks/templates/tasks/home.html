@@ -1,0 +1,30 @@
+{% extends 'tasks/base.html' %}
+
+{% block title %}Task List{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<p>Welcome, <strong>{{ user.username }}!</strong></p>
+{% if tasks %}
+
+<h1>Task List</h1>
+<ul>
+    {% for task in tasks %}
+    <li>
+        <span>{{ task.title }}</span>
+        <a href="{% url 'task_detail' pk=task.pk %}">View Details</a>
+        <a href="{% url 'task_update' pk=task.pk %}">Edit</a>
+        <a href="{% url 'task_delete' pk=task.pk %}">Delete</a>
+    </li>
+    {% endfor %}
+</ul>
+
+{% else %}
+    <p>No tasks found.</p>
+{% endif %}
+<a href="{% url 'account_logout' %}" id="logout" class="styled-link">Logout</a>
+{% else %}
+<a href="{% url 'account_login' %}" class="google-login-btn">Login with Google</a>
+{% endif %}
+
+{% endblock %}
