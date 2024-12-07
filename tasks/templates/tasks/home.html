@@ -11,7 +11,7 @@
 <ul>
     {% for task in tasks %}
     <li>
-        <span>{{ task.title }}</span>
+        <strong><span>{{ task.title }}</span></strong>
         <a href="{% url 'task_detail' pk=task.pk %}">View Details</a>
         <a href="{% url 'task_update' pk=task.pk %}">Edit</a>
         <a href="{% url 'task_delete' pk=task.pk %}">Delete</a>
